@@ -1,7 +1,6 @@
 require('plugins')
 require('options')
 require('keymaps')
-require('ui')
 require('config/statusline')
 require('config/indent')
 require('config/cursorline')
@@ -25,3 +24,5 @@ require("nvim-tree").setup({
     dotfiles = true,
   },
 })
+
+vim.cmd.colorscheme "catppuccin-macchiato"

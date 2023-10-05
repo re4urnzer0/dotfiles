@@ -1,0 +1,23 @@
+import:
+    # https://github.com/alacritty/alacritty-theme
+    - ~/.config/alacritty/alacritty-theme/themes/wombat.yaml
+env:
+    TERM: xterm-256color
+window:
+    title: Alacritty
+    dynamic_title: true
+    dimensions:
+        columns: 110 
+        lines: 45 
+    opacity: 0.95
+font:
+    normal:
+        family: "CodeNewRoman NFM"
+    size: 20
+
+live_config_reload: true
+
+cursor:
+  style:
+    blinking: on 
+

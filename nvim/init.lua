@@ -8,6 +8,10 @@ require('config/surround')
 require('config/nvim-cmp')
 require('config/lsp')
 require('config/alpha')
+require('config/lsp_sig')
+
+-- auto close
+require("autoclose").setup()
 
 -- nvim-tree
 vim.g.loaded_netrw = 1

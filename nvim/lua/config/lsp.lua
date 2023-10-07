@@ -10,7 +10,7 @@ require('mason').setup({
 
 require('mason-lspconfig').setup({
     -- A list of servers to automatically install if they're not already installed
-    ensure_installed = { 'pylsp', 'lua_ls', 'clangd',  'quick_lint_js', 'sqls',},
+    ensure_installed = { 'pylsp', 'lua_ls', 'clangd', 'quick_lint_js', 'sqls', },
 })
 
 -- Set different settings for different languages' LSP
@@ -35,7 +35,6 @@ local on_attach = function(client, bufnr)
     vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
     require("clangd_extensions.inlay_hints").setup_autocmd()
     require("clangd_extensions.inlay_hints").set_inlay_hints()
-
     -- See `:help vim.lsp.*` for documentation on any of the below functions
     local bufopts = { noremap = true, silent = true, buffer = bufnr }
     vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
@@ -54,19 +53,6 @@ local on_attach = function(client, bufnr)
     vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
     vim.keymap.set('n', '<space>f', function() vim.lsp.buf.format { async = true } end, bufopts)
 end
-
-lspconfig.pylsp.setup({
-    on_attach = on_attach,
-})
-
-lspconfig.clangd.setup({
-    on_attach = on_attach,
-})
-
-lspconfig.lua_ls.setup({
-    on_attach = on_attach,
-})
-
 
 require("clangd_extensions").setup({
     inlay_hints = {
@@ -151,3 +137,14 @@ require("clangd_extensions").setup({
     },
 })
 
+lspconfig.pylsp.setup({
+    on_attach = on_attach,
+})
+
+lspconfig.lua_ls.setup({
+    on_attach = on_attach,
+})
+
+lspconfig.clangd.setup({
+    on_attach = on_attach,
+})

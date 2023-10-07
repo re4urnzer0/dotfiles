@@ -31,6 +31,8 @@ return require('packer').startup(function(use)
             'nvim-tree/nvim-web-devicons', -- optional
         },
     }
+    -- Auto close
+    use 'm4xshen/autoclose.nvim'
     -- Status line
     use { 'nvim-lualine/lualine.nvim' }
     -- Tags
@@ -40,11 +42,6 @@ return require('packer').startup(function(use)
     use { 'lukas-reineke/indent-blankline.nvim' }
     -- Cursor line
     use { 'yamatsum/nvim-cursorline' }
-    -- Auto pairs complete
-    use {
-        "windwp/nvim-autopairs",
-        config = function() require("nvim-autopairs").setup {} end
-    }
     -- Surround
     use({
         "kylechui/nvim-surround",
@@ -67,6 +64,9 @@ return require('packer').startup(function(use)
     use 'L3MON4D3/LuaSnip'
     use 'saadparwaiz1/cmp_luasnip'
     use 'p00f/clangd_extensions.nvim'
+    use {
+        "ray-x/lsp_signature.nvim",
+    }
     -- Kind icon
     use { 'onsails/lspkind.nvim' }
     -- Dashboard
@@ -82,6 +82,7 @@ return require('packer').startup(function(use)
         -- or                            , branch = '0.1.x',
         requires = { { 'nvim-lua/plenary.nvim' } }
     }
+
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins

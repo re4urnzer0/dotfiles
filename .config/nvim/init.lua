@@ -1,6 +1,7 @@
 require('plugins')
 require('options')
 require('keymaps')
+require('ui')
 require('config/statusline')
 require('config/indent')
 require('config/cursorline')
@@ -9,6 +10,10 @@ require('config/nvim-cmp')
 require('config/lsp')
 require('config/alpha')
 require('config/lsp_sig')
+require('config/fold')
+require('config/lean4')
+
+vim.g.maplocalleader = '  '
 
 -- auto close
 require("autoclose").setup()

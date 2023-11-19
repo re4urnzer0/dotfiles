@@ -12,7 +12,7 @@ window:
     opacity: 0.95
 font:
     normal:
-        family: "CodeNewRoman NFM"
+        family: "CodeNewRoman Nerd Font Mono"
     size: 20
 
 live_config_reload: true
@@ -20,4 +20,3 @@ live_config_reload: true
 cursor:
   style:
     blinking: on 
-

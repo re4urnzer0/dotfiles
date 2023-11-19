@@ -8,4 +8,4 @@
           }
     }
  })
-vim.keymap.set('n', '<A-n>', ':Neotree toggle<CR>')
+vim.keymap.set('n', '<A-n>', '<CMD>Neotree toggle<CR>')

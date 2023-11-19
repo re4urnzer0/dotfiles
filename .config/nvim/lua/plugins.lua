@@ -73,7 +73,10 @@ require("lazy").setup({
     { 'hrsh7th/cmp-path' },    -- path auto-completion
     { 'hrsh7th/cmp-cmdline' }, -- cmdline auto-completion
     -- Snippets
-    { 'L3MON4D3/LuaSnip' },
+    {
+        'L3MON4D3/LuaSnip',
+        build = "make install_jsregexp"
+    },
     { 'saadparwaiz1/cmp_luasnip' },
     -- LSP
     { 'williamboman/mason.nvim' },
@@ -95,5 +98,28 @@ require("lazy").setup({
         config = function()
             require('Comment').setup()
         end
+    },
+    -- Notice
+    {
+        "folke/noice.nvim",
+        event = "VeryLazy",
+        opts = {
+            -- add any options here
+        },
+        dependencies = {
+            -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+            "MunifTanjim/nui.nvim",
+            -- OPTIONAL:
+            --   `nvim-notify` is only needed, if you want to use the notification view.
+            --   If not available, we use `mini` as the fallback
+            "rcarriga/nvim-notify",
+        }
+    },
+    -- Outline
+    { 'simrat39/symbols-outline.nvim' },
+    -- Trouble
+    {
+        "folke/trouble.nvim",
+        dependencies = { "nvim-tree/nvim-web-devicons" },
     }
 })

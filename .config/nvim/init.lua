@@ -3,6 +3,7 @@
 -- Bases
 require('base/options')
 require('base/keymaps')
+
 -- lazy.nvim
 require('plugins')
 -- Color Scheme
@@ -33,3 +34,9 @@ require('module.cursorline')
 require('module.treesitter')
 -- lualine.nvim
 require('module.statusline')
+-- noice.nvim
+require('module.notice')
+-- trouble.nvim
+require('module.diag')
+-- symbol-outline.nvim
+require('module.outline')

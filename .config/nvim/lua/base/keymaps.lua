@@ -1,12 +1,12 @@
 local keymap = vim.keymap
 local opts = {noremap = true, silent = true}
 
+-- General
+keymap.set("n", "qq", "<CMD>q<CR>", opts)
+keymap.set("n", "qW", "<CMD>wq<CR>", opts)
+
 -- Select all
 keymap.set("n", "<C-a>", "gg<S-v>G")
-
--- Split window
-keymap.set("n", "ss", "<CMD>split<CR>", opts)
-keymap.set("n", "sv", "<CMD>vs<CR>", opts)
 
 -- Diagnostics
 keymap.set("n", "<C-j>", function ()

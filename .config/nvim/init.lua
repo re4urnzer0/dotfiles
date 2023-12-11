@@ -6,9 +6,10 @@ if vim.g.vscode then
 else
     -- Bases
     require('base')
-    --Plugins
+
     -- lazy.nvim
-    require('plugins')
+    require('pluginmgr')
+
     -- Color Scheme
     require('cs')
 

@@ -65,3 +65,7 @@ lspconfig.lua_ls.setup({
 lspconfig.clangd.setup({
     on_attach = on_attach,
 })
+-- Cmake
+lspconfig.cmake.setup({
+    on_attach = on_attach,
+})

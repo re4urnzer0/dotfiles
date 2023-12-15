@@ -1,5 +1,4 @@
 -- Loaded config files
-
 if vim.g.vscode then
     --- VScode extensions
     vim.opt.hlsearch = false

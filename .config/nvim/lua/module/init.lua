@@ -1,9 +1,7 @@
 -- Plugins
+
 -- autoclose.nvim
 require('module.ac')
-
--- indent-blankline.nvim
-require('module.indent')
 
 -- neo-tree.nvim
 require('module.sidebar')
@@ -34,9 +32,6 @@ require('module.treesitter')
 
 -- lualine.nvim
 require('module.statusline')
-
--- noice.nvim
-require('module.notice')
 
 -- trouble.nvim
 require('module.diag')

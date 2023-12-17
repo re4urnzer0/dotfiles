@@ -9,9 +9,6 @@ require('module.sidebar')
 -- alpha.nvim
 require('module.startup')
 
--- barbar.nvim
-require('module.tabline')
-
 -- telescope.nvim
 require('module.ts')
 
@@ -41,3 +38,6 @@ require('module.outline')
 
 -- gitsigns.nvim
 require('module.git')
+
+-- bufferline.nvim
+require('module.tabline')

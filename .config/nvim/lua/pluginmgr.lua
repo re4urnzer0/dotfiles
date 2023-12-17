@@ -77,12 +77,18 @@ require("lazy").setup({
     { 'williamboman/mason.nvim' },
     { 'williamboman/mason-lspconfig.nvim' },
     { 'onsails/lspkind.nvim' },
+    {
+        'nvimdev/lspsaga.nvim',
+        config = function()
+            require('lspsaga').setup({})
+        end,
+    },
     -- Smooth Scroll
     { "karb94/neoscroll.nvim" },
     -- Cursorline
     { "yamatsum/nvim-cursorline" },
     -- Basic function
-    { "nvim-treesitter/nvim-treesitter",  build = ":TSUpdate" },
+    { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
     -- ts plugins
     {
         "nvim-treesitter/nvim-treesitter-context",

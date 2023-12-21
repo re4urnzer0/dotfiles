@@ -19,6 +19,10 @@ require('mason-lspconfig').setup({
 --     - on_attach: a lua callback function to run after LSP atteches to a given buffer
 local lspconfig = require('lspconfig')
 
+vim.diagnostic.config({
+  virtual_text = false,
+})
+
 -- Customized on_attach function
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 local opts = { noremap = true, silent = true }

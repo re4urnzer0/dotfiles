@@ -16,9 +16,15 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
     -- Color scheme
-    { "catppuccin/nvim",        name = "catppuccin", priority = 1000 },
+    { "catppuccin/nvim",           name = "catppuccin", priority = 1000 },
     -- Pairs
-    { 'm4xshen/autoclose.nvim', opt = {} },
+    {
+        'm4xshen/autoclose.nvim',
+        opt = {},
+        config = function()
+            require("autoclose").setup()
+        end
+    },
     -- Startup
     {
         'goolord/alpha-nvim',
@@ -70,7 +76,10 @@ require("lazy").setup({
     -- Snippets
     {
         'L3MON4D3/LuaSnip',
-        build = "make install_jsregexp"
+        build = "make install_jsregexp",
+        config = function ()
+            require("luasnip.loaders.from_vscode").lazy_load()
+        end
     },
     { 'saadparwaiz1/cmp_luasnip' },
     -- LSP
@@ -83,10 +92,25 @@ require("lazy").setup({
             require('lspsaga').setup({})
         end,
     },
-    -- Smooth Scroll
-    { "karb94/neoscroll.nvim" },
     -- Cursorline
-    { "yamatsum/nvim-cursorline" },
+    {
+        "yamatsum/nvim-cursorline",
+        config = function()
+            require('nvim-cursorline').setup {
+                cursorline = {
+                    enable = true,
+                    timeout = 0,
+                    number = false,
+                },
+                cursorword = {
+                    enable = true,
+                    min_length = 3,
+                    hl = { underline = false },
+                }
+            }
+        end,
+
+    },
     -- Basic function
     { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
     -- ts plugins
@@ -121,7 +145,12 @@ require("lazy").setup({
         end
     },
     -- Outline
-    { 'simrat39/symbols-outline.nvim' },
+    {
+        'simrat39/symbols-outline.nvim',
+        config = function()
+            require("symbols-outline").setup()
+        end
+    },
     -- Trouble
     {
         "folke/trouble.nvim",
@@ -141,16 +170,6 @@ require("lazy").setup({
             { "R",     mode = { "o", "x" },      function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
             { "<c-s>", mode = { "c" },           function() require("flash").toggle() end,            desc = "Toggle Flash Search" },
         },
-    },
-    -- Keymap ref
-    {
-        "folke/which-key.nvim",
-        event = "VeryLazy",
-        init = function()
-            vim.o.timeout = true
-            vim.o.timeoutlen = 300
-        end,
-        opts = {},
     },
     {
         "folke/noice.nvim",

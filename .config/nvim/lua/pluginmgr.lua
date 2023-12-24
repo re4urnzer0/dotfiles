@@ -33,15 +33,6 @@ require("lazy").setup({
             require 'alpha'.setup(require 'alpha.themes.dashboard'.config)
         end
     },
-    -- Indent
-    {
-        "lukas-reineke/indent-blankline.nvim",
-        main = "ibl",
-        opts = {},
-        config = function()
-            require("ibl").setup()
-        end
-    },
     -- Side bar
     {
         "nvim-neo-tree/neo-tree.nvim",
@@ -69,15 +60,11 @@ require("lazy").setup({
     { 'hrsh7th/cmp-buffer' },  -- buffer auto-completion
     { 'hrsh7th/cmp-path' },    -- path auto-completion
     { 'hrsh7th/cmp-cmdline' }, -- cmdline auto-completion
-    {
-        "ray-x/lsp_signature.nvim",
-        event = "VeryLazy",
-    },
     -- Snippets
     {
         'L3MON4D3/LuaSnip',
         build = "make install_jsregexp",
-        config = function ()
+        config = function()
             require("luasnip.loaders.from_vscode").lazy_load()
         end
     },
@@ -88,8 +75,9 @@ require("lazy").setup({
     { 'onsails/lspkind.nvim' },
     {
         'nvimdev/lspsaga.nvim',
+        opts = {},
         config = function()
-            require('lspsaga').setup({})
+            require('lspsaga').setup(opts)
         end,
     },
     -- Cursorline
@@ -100,7 +88,7 @@ require("lazy").setup({
                 cursorline = {
                     enable = true,
                     timeout = 0,
-                    number = false,
+                    number = true,
                 },
                 cursorword = {
                     enable = true,
@@ -142,13 +130,6 @@ require("lazy").setup({
         lazy = false,
         config = function()
             require('Comment').setup()
-        end
-    },
-    -- Outline
-    {
-        'simrat39/symbols-outline.nvim',
-        config = function()
-            require("symbols-outline").setup()
         end
     },
     -- Trouble

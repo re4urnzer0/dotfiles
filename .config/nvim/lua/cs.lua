@@ -34,6 +34,7 @@ require("catppuccin").setup({
         return {
             Comment = { fg = "#89AEB1" },
             Visual = { bg = "#6C6F85", fg = "#FFA500" },
+            CursorLine = { bg = "#5C5F77" }
         }
     end,
     integrations = {

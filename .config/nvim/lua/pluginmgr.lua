@@ -80,25 +80,6 @@ require("lazy").setup({
             require('lspsaga').setup(opts)
         end,
     },
-    -- Cursorline
-    {
-        "yamatsum/nvim-cursorline",
-        config = function()
-            require('nvim-cursorline').setup {
-                cursorline = {
-                    enable = true,
-                    timeout = 0,
-                    number = true,
-                },
-                cursorword = {
-                    enable = true,
-                    min_length = 3,
-                    hl = { underline = false },
-                }
-            }
-        end,
-
-    },
     -- Basic function
     { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
     -- ts plugins
@@ -179,7 +160,6 @@ require("lazy").setup({
         },
         dependencies = {
             "MunifTanjim/nui.nvim",
-            "rcarriga/nvim-notify",
         }
     },
     -- Tabline

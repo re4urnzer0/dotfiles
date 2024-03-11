@@ -33,21 +33,18 @@ require("catppuccin").setup({
     custom_highlights = function(colors)
         return {
             Comment = { fg = "#89AEB1" },
-            Visual = { bg = "#6C6F85", fg = "#FFA500" },
-            CursorLine = { bg = "#5C5F77" }
+            -- Visual = { bg = "#6C6F85", fg = "#FFA500" },
         }
     end,
     integrations = {
         cmp = true,
         gitsigns = true,
-        nvimtree = true,
         treesitter = true,
-        notify = true,
         mini = {
             enabled = true,
             indentscope_color = "",
         },
-        lsp_saga = false,
+        lsp_saga = true,
     },
 })
 

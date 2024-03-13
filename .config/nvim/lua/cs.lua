@@ -1,8 +1,8 @@
 require("catppuccin").setup({
-    flavour = "macchiato", -- latte, frappe, macchiato, mocha
+    flavour = "latte", -- latte, frappe, macchiato, mocha
     background = {         -- :h background
         light = "latte",
-        dark = "mocha",
+        dark = "macchiato",
     },
     transparent_background = true, -- disables setting the background color.
     show_end_of_buffer = false,    -- shows the '~' characters after the end of buffers
@@ -32,7 +32,7 @@ require("catppuccin").setup({
     color_overrides = {},
     custom_highlights = function(colors)
         return {
-            Comment = { fg = "#89AEB1" },
+            -- Comment = { fg = "#89AEB1" },
             -- Visual = { bg = "#6C6F85", fg = "#FFA500" },
         }
     end,
@@ -41,7 +41,7 @@ require("catppuccin").setup({
         gitsigns = true,
         treesitter = true,
         mini = {
-            enabled = true,
+            enabled = false,
             indentscope_color = "",
         },
         lsp_saga = true,

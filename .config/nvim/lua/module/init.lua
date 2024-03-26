@@ -15,9 +15,6 @@ require('module.lsp')
 -- nvim-cmp
 require('module.nvim-cmp')
 
--- treesitter.nvim
-require('module.treesitter')
-
 -- lualine.nvim
 require('module.statusline')
 

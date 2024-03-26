@@ -6,7 +6,7 @@ end
 
 local luasnip = require("luasnip")
 local cmp = require("cmp")
-
+--[[ 
 -- Color scheme for Pmenu
 vim.api.nvim_set_hl(0, "PmenuSel", { bg = "#EFF1F5", fg = "#EFF1F5" })
 vim.api.nvim_set_hl(0, "Pmenu", { fg = "NONE", bg = "#DCE0E8" })
@@ -47,14 +47,14 @@ vim.api.nvim_set_hl(0, "CmpItemKindEnumMember", { fg = "#DDE5F5", bg = "#6C8ED4"
 
 vim.api.nvim_set_hl(0, "CmpItemKindInterface", { fg = "#D8EEEB", bg = "#58B5A8" })
 vim.api.nvim_set_hl(0, "CmpItemKindColor", { fg = "#D8EEEB", bg = "#58B5A8" })
-vim.api.nvim_set_hl(0, "CmpItemKindTypeParameter", { fg = "#D8EEEB", bg = "#58B5A8" })
+vim.api.nvim_set_hl(0, "CmpItemKindTypeParameter", { fg = "#D8EEEB", bg = "#58B5A8" }) ]]
 
 
 cmp.setup({
   snippet = {
     -- REQUIRED - you must specify a snippet engine
     expand = function(args)
-      require('luasnip').lsp_expand(args.body)       -- For `luasnip` users.
+      require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
     end,
   },
   mapping = cmp.mapping.preset.insert({
@@ -79,7 +79,7 @@ cmp.setup({
       else
         fallback()
       end
-    end, { "i", "s" }),     -- i - insert mode; s - select mode
+    end, { "i", "s" }), -- i - insert mode; s - select mode
     ["<S-Tab>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_prev_item()
@@ -113,10 +113,10 @@ cmp.setup({
 
   -- Set source precedence
   sources = cmp.config.sources({
-    { name = 'nvim_lsp' },     -- For nvim-lsp
-    { name = 'luasnip' },      -- For luasnip user
-    { name = 'buffer' },       -- For buffer word completion
-    { name = 'path' },         -- For path completion
-    { name = 'cmdline' }
+    { name = 'nvim_lsp' }, -- For nvim-lsp
+    { name = 'buffer' },   -- For buffer word completion
+    { name = 'path' },     -- For path completion
+    { name = 'cmdline' },
+    { name = 'luasnip' },  -- For luasnip user
   })
 })

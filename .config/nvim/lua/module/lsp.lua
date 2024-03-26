@@ -50,8 +50,8 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', '<space>gd', '<CMD>Lspsaga goto_definition<CR>', bufopts)
   vim.keymap.set('n', '<space>sd', '<CMD>Lspsaga peek_type_definition<CR>', bufopts)
   -- Hover
-  --    vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
-  vim.keymap.set('n', 'K', '<CMD>Lspsaga hover_doc<CR>')
+  vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
+  -- vim.keymap.set('n', 'K', '<CMD>Lspsaga hover_doc<CR>')
   -- Code_action
   --    vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, bufopts)
   vim.keymap.set('n', '<space>ca', '<CMD>Lspsaga code_action<CR>', bufopts)
@@ -82,6 +82,8 @@ lspconfig.lua_ls.setup({
 -- C/CPP
 lspconfig.clangd.setup({
   on_attach = on_attach,
+  require("clangd_extensions.inlay_hints").setup_autocmd(),
+  require("clangd_extensions.inlay_hints").set_inlay_hints(),
 })
 -- Cmake
 lspconfig.cmake.setup({
@@ -108,4 +110,8 @@ lspconfig.rust_analyzer.setup({
       },
     }
   }
+})
+-- Markdown
+lspconfig.marksman.setup({
+  on_attach = on_attach,
 })

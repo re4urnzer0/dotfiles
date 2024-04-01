@@ -16,7 +16,7 @@ require("neo-tree").setup({
   },
 })
 vim.keymap.set('n', '<A-n>', '<CMD>Neotree toggle<CR>')
-vim.api.nvim_set_hl(0, "NeoTreeRootName", { italic = false })
+vim.api.nvim_set_hl(0, "NeoTreeRootName", { italic = true})
 vim.api.nvim_set_hl(0, "NeoTreeDirectoryName", { italic = false })
 vim.api.nvim_set_hl(0, "NeoTreeMessage", { italic = false })
 vim.api.nvim_set_hl(0, "NeoTreeGitConflict", { italic = false })

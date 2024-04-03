@@ -15,9 +15,6 @@ require('module.lsp')
 -- nvim-cmp
 require('module.nvim-cmp')
 
--- lualine.nvim
-require('module.statusline')
-
 -- trouble.nvim
 require('module.diag')
 

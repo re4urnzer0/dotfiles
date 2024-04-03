@@ -10,7 +10,7 @@ require('mason').setup({
 
 -- format uses clangd-format and stylua.
 require('mason-lspconfig').setup({
-  ensure_installed = { 'lua_ls', 'clangd', 'pylsp', 'cmake', 'stylua', 'clang-format', 'rust-analyzer', 'marksman'},
+  ensure_installed = { 'lua_ls', 'clangd', 'pylsp', 'cmake', 'marksman'},
 })
 
 -- Set different settings for different languages' LSP

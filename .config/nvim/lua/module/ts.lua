@@ -1,4 +1,6 @@
 local actions = require("telescope.actions")
+local opts = { noremap = true, silent = true }
+require("telescope").load_extension("noice")
 require("telescope").setup {
   defaults = {
     mappings = {
@@ -34,6 +36,7 @@ vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = '[S]earch [D]iag
 vim.keymap.set('n', '<leader>sr', builtin.resume, { desc = '[S]earch [R]esume' })
 vim.keymap.set('n', '<leader>s.', builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
 vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find existing buffers' })
+vim.keymap.set('n', '<leader>sm', "<CMD>Telescope noice<CR>", opts)
 -- Slightly advanced example of overriding default behavior and theme
 vim.keymap.set('n', '<leader>/', function()
   -- You can pass additional configuration to Telescope to change the theme, layout, etc.

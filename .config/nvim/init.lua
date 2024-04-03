@@ -16,20 +16,4 @@ else
 
   -- Plugins
   require('module')
-
-  -- self
-  local function split()
-    vim.cmd('set splitright')
-    vim.cmd('vsp')
-  end
-
-  function codeRun()
-    split()
-    if vim.bo.filetype == 'cpp' then
-      vim.cmd('term g++ "%" -o "%<" && ./"%<"')
-    elseif vim.bo.filetype == 'python' then
-      split()
-      vim.cmd('term python3 "%"')
-    end
-  end
 end

@@ -16,7 +16,7 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
   -- Color scheme
-  { "catppuccin/nvim",           name = "catppuccin", priority = 1000 },
+  { "catppuccin/nvim",     name = "catppuccin", priority = 1000 },
   -- Pairs
   {
     'm4xshen/autoclose.nvim',
@@ -39,29 +39,30 @@ require("lazy").setup({
     branch = "v3.x",
     dependencies = {
       "nvim-lua/plenary.nvim",
-      "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+      "nvim-tree/nvim-web-devicons",
       "MunifTanjim/nui.nvim",
-      -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
     }
   },
   -- Status line
-  { "nvim-lualine/lualine.nvim", },
+  {
+    'itchyny/lightline.vim',
+    config = function()
+      vim.g.lightline = {
+        colorscheme = "catppuccin",
+      }
+    end,
+  },
   -- Fzf
   {
     'nvim-telescope/telescope.nvim',
     tag = '0.1.4',
-    -- or                              , branch = '0.1.x',
     dependencies = {
       'nvim-lua/plenary.nvim',
       { -- If encountering errors, see telescope-fzf-native README for installation instructions
         'nvim-telescope/telescope-fzf-native.nvim',
-
         -- `build` is used to run some command when the plugin is installed/updated.
         -- This is only run then, not every time Neovim starts up.
         build = 'make',
-
-        -- `cond` is a condition used to determine whether this plugin should be
-        -- installed and loaded.
         cond = function()
           return vim.fn.executable 'make' == 1
         end,
@@ -70,8 +71,12 @@ require("lazy").setup({
     },
   },
   -- Auto Complete
-  { 'neovim/nvim-lspconfig' },
-  { 'hrsh7th/nvim-cmp' },
+  {
+    'neovim/nvim-lspconfig',
+  },
+  {
+    'hrsh7th/nvim-cmp',
+  },
   { 'hrsh7th/cmp-nvim-lsp' },
   { 'hrsh7th/cmp-buffer' },  -- buffer auto-completion
   { 'hrsh7th/cmp-path' },    -- path auto-completion
@@ -86,8 +91,12 @@ require("lazy").setup({
   },
   { 'saadparwaiz1/cmp_luasnip' },
   -- LSP
-  { 'williamboman/mason.nvim' },
-  { 'williamboman/mason-lspconfig.nvim' },
+  {
+    'williamboman/mason.nvim',
+  },
+  {
+    'williamboman/mason-lspconfig.nvim',
+  },
   { 'onsails/lspkind.nvim' },
   {
     'p00f/clangd_extensions.nvim',
@@ -101,7 +110,11 @@ require("lazy").setup({
       require('lspsaga').setup {
         lightbulb = {
           debounce = 100,
-        }
+          enable = true,
+        },
+        ui = {
+          kind = require("catppuccin.groups.integrations.lsp_saga").custom_kind(),
+        },
       }
     end,
   },
@@ -174,5 +187,13 @@ require("lazy").setup({
   -- Git sup
   {
     'lewis6991/gitsigns.nvim',
+  },
+  -- Scrolloff set
+  {
+    'Aasim-A/scrollEOF.nvim',
+    event = { 'CursorMoved', 'WinScrolled' },
+    config = function()
+      require('scrollEOF').setup()
+    end
   },
 })

@@ -70,5 +70,8 @@ function codeRun()
   elseif vim.bo.filetype == 'python' then
     split()
     vim.cmd('term python3 "%"')
+  elseif vim.bo.filetype == 'c' then
+    split()
+    vim.cmd('term gcc "%" -o "%<" && ./"%<"')
   end
 end

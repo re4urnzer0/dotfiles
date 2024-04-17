@@ -56,22 +56,3 @@ vim.api.nvim_create_autocmd('TextYankPost', {
     vim.highlight.on_yank()
   end,
 })
-
--- Simple code running
-local function split()
-  vim.cmd('set splitright')
-  vim.cmd('vsp')
-end
-
-function codeRun()
-  split()
-  if vim.bo.filetype == 'cpp' then
-    vim.cmd('term g++ "%" -o "%<" && ./"%<"')
-  elseif vim.bo.filetype == 'python' then
-    split()
-    vim.cmd('term python3 "%"')
-  elseif vim.bo.filetype == 'c' then
-    split()
-    vim.cmd('term gcc "%" -o "%<" && ./"%<"')
-  end
-end

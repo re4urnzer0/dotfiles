@@ -45,7 +45,7 @@ require("lazy").setup({
   },
   -- Status line
   {
-    'nvimdev/galaxyline.nvim'
+    'glepnir/galaxyline.nvim',
   },
   -- Fzf
   {
@@ -66,9 +66,7 @@ require("lazy").setup({
     },
   },
   -- Auto Complete
-  {
-    'neovim/nvim-lspconfig',
-  },
+
   {
     'hrsh7th/nvim-cmp',
   },
@@ -86,6 +84,9 @@ require("lazy").setup({
   },
   { 'saadparwaiz1/cmp_luasnip' },
   -- LSP
+  {
+    'neovim/nvim-lspconfig',
+  },
   {
     'williamboman/mason.nvim',
   },

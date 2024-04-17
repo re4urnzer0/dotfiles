@@ -16,6 +16,3 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 
 -- Select all
 keymap.set("n", "<C-a>", "gg<S-v>G")
-
--- simple run
-keymap.set("n", "<F7>", "<CMD>lua codeRun()<CR>", opts)

@@ -1,6 +1,6 @@
 -- Plugins
 
--- galaxyline.nvim
+-- feline.nvim
 require('module.statusline')
 
 -- neo-tree.nvim

@@ -3,7 +3,7 @@
 -- vscode.nvim
 if vim.g.vscode then
   --- VScode extensions
-  vim.opt.hlsearch = false
+  require('base.options')
 else
   -- Bases
   require('base')

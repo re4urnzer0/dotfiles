@@ -45,7 +45,8 @@ require("lazy").setup({
   },
   -- Status line
   {
-    'glepnir/galaxyline.nvim',
+    'nvim-lualine/lualine.nvim',
+    dependencies = { 'nvim-tree/nvim-web-devicons' }
   },
   -- Fzf
   {
@@ -192,4 +193,6 @@ require("lazy").setup({
       require('scrollEOF').setup()
     end
   },
+  -- Treesitter
+  { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
 })

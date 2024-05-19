@@ -1,5 +1,8 @@
 -- Plugins
 
+-- tokyonight.nvim
+require('module.colorscheme')
+
 -- galaxyline.nvim
 require('module.statusline')
 

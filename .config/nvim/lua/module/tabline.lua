@@ -20,5 +20,4 @@ bufferline.setup({
     options = {
         style_preset = bufferline.style_preset.no_italic,
     },
-    highlights = require("catppuccin.groups.integrations.bufferline").get(),
 })

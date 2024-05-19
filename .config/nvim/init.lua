@@ -11,9 +11,6 @@ else
   -- lazy.nvim
   require('pluginmgr')
 
-  -- Color Scheme
-  require('cs')
-
   -- Plugins
   require('module')
 end

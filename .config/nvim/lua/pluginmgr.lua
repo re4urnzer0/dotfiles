@@ -16,7 +16,15 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
   -- Color scheme
-  { "catppuccin/nvim",     name = "catppuccin", priority = 1000 },
+  {
+    "folke/tokyonight.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {},
+    config = function()
+      vim.cmd [[colorscheme tokyonight]]
+    end
+  },
   -- Pairs
   {
     'm4xshen/autoclose.nvim',
@@ -108,9 +116,6 @@ require("lazy").setup({
         lightbulb = {
           debounce = 100,
           enable = true,
-        },
-        ui = {
-          kind = require("catppuccin.groups.integrations.lsp_saga").custom_kind(),
         },
       }
     end,

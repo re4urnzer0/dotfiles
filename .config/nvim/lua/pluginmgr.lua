@@ -17,10 +17,12 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
   -- Color scheme
   {
-    "folke/tokyonight.nvim",
+    "catppuccin/nvim",
+    name = "catppuccin",
     lazy = false,
     priority = 1000,
   },
+
   -- Pairs
   {
     'm4xshen/autoclose.nvim',
@@ -111,7 +113,7 @@ require("lazy").setup({
       require('lspsaga').setup {
         lightbulb = {
           debounce = 100,
-          enable = true,
+          enable = false,
         },
       }
     end,
@@ -179,7 +181,6 @@ require("lazy").setup({
   -- Tabline
   {
     'akinsho/bufferline.nvim',
-    version = "*",
     dependencies = 'nvim-tree/nvim-web-devicons',
   },
   -- Git sup

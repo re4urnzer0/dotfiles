@@ -187,14 +187,6 @@ require("lazy").setup({
   {
     'lewis6991/gitsigns.nvim',
   },
-  -- Scrolloff set
-  {
-    'Aasim-A/scrollEOF.nvim',
-    event = { 'CursorMoved', 'WinScrolled' },
-    config = function()
-      require('scrollEOF').setup()
-    end
-  },
   -- Treesitter
   { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
 })

@@ -21,9 +21,6 @@ require('module.lsp')
 -- nvim-cmp
 require('module.nvim-cmp')
 
--- trouble.nvim
-require('module.diag')
-
 -- gitsigns.nvim
 require('module.git')
 

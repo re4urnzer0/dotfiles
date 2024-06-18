@@ -1,6 +1,6 @@
 require("catppuccin").setup({
-  flavour = "macchiato", -- latte, frappe, macchiato, mocha
-  background = {         -- :h background
+  flavour = "frappe", -- latte, frappe, macchiato, mocha
+  background = {      -- :h background
     light = "latte",
     dark = "macchiato",
   },
@@ -12,15 +12,15 @@ require("catppuccin").setup({
     shade = "dark",
     percentage = 0.15,           -- percentage of the shade to apply to the inactive window
   },
-  no_italic = true,              -- Force no italic
+  no_italic = true,             -- Force no italic
   no_bold = false,               -- Force no bold
   no_underline = false,          -- Force no underline
   styles = {                     -- Handles the styles of general hi groups (see `:h highlight-args`):
     comments = { "italic" },     -- Change the style of comments
     conditionals = { "italic" },
     loops = {},
-    functions = {},
-    keywords = {},
+    functions = { "italic" },
+    keywords = { "italic" },
     strings = {},
     variables = {},
     numbers = {},

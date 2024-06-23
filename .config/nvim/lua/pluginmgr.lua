@@ -118,6 +118,14 @@ require("lazy").setup({
       }
     end,
   },
+  -- format
+  {
+    "nvimdev/guard.nvim",
+    -- Builtin configuration, optional
+    dependencies = {
+      "nvimdev/guard-collection",
+    },
+  },
   -- Comment
   {
     'numToStr/Comment.nvim',

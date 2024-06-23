@@ -26,3 +26,6 @@ require('module.git')
 
 -- bufferline.nvim
 require('module.tabline')
+
+-- guard.nvim
+require('module.format')

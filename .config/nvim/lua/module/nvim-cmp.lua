@@ -78,7 +78,7 @@ cmp.setup({
   -- Set source precedence
   sources = cmp.config.sources({
     { name = 'nvim_lsp' }, -- For nvim-lsp
-    { name = 'luasnip' },  -- For luasnip user
+    { name = 'luasnip' },
     { name = 'path' },
   })
 })

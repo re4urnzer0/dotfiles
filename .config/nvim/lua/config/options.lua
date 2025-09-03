@@ -3,6 +3,7 @@
 -- Add any additional options here
 
 vim.opt.termguicolors = true
+vim.opt.list = false
 
 if vim.g.neovide then
   vim.g.neovide_opacity = 0.95

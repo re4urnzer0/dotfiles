@@ -4,10 +4,11 @@
 
 vim.opt.termguicolors = true
 vim.opt.list = false
+vim.opt.scrolloff = 999
 
 if vim.g.neovide then
-  vim.g.neovide_opacity = 0.95
-  vim.g.neovide_normal_opacity = 0.95
+  vim.g.neovide_opacity = 1
+  vim.g.neovide_normal_opacity = 1
   vim.g.neovide_theme = "auto"
   vim.g.neovide_remember_window_size = true
   vim.g.neovide_fullscreen = true

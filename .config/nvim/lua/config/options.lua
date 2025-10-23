@@ -4,7 +4,6 @@
 
 vim.opt.termguicolors = true
 vim.opt.list = false
-vim.opt.scrolloff = 999
 
 if vim.g.neovide then
   vim.g.neovide_opacity = 1

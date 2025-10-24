@@ -4,9 +4,7 @@ end
 
 alias ff="fastfetch"
 alias c="clear"
-alias ls="exa -all"
-alias fc="nvim ~/.config/fish/config.fish"
-alias sf="source ~/.config/fish/config.fish"
+alias ls="exa -la --icons=auto"
 alias lg="lazygit"
 alias gdb="gdb -q"
 alias cat="bat"

@@ -3,8 +3,7 @@ if status is-interactive
 end
 
 alias ff="fastfetch"
-alias c="clear"
-alias ls="exa -la --icons=auto"
+alias ls="lsd -la"
 alias lg="lazygit"
 alias gdb="gdb -q"
 alias cat="bat"

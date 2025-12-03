@@ -41,6 +41,7 @@ success "WSL config done."
 
 PACKAGES=(
     git
+    lsd
     bat
     fd-find
     fzf
@@ -62,7 +63,7 @@ success "Packages install done."
 
 if ! command -v fd &> /dev/null; then
     if command -v fdfind &> /dev/null; then
-        log "正在创建 'fd' 软链接..."
+        log "Creating 'fd' solf link..."
         sudo ln -s $(which fdfind) /usr/local/bin/fd
     fi
 fi
@@ -73,6 +74,15 @@ git config --global user.email "$GIT_EMAIL"
 git config --global init.defaultBranch main
 git config --global core.editor nvim
 success "Git config done: $GIT_USER <$GIT_EMAIL>"
+
+log "Changing Shell to Fish..."
+FISH_PATH=$(which fish)
+if [ -z "$FISH_PATH" ]; then
+    FISH_PATH="/usr/bin/fish"
+fi
+
+sudo usermod -s "$FISH_PATH" $USER
+success "Shell -> Fish ($FISH_PATH)"
 
 echo ""
 echo -e "${GREEN}=============================================${NC}"

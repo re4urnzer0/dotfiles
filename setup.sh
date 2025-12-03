@@ -42,6 +42,7 @@ success "WSL config done."
 PACKAGES=(
     git
     lsd
+    xz
     bat
     fd-find
     fzf
@@ -55,6 +56,9 @@ PACKAGES=(
     man-pages
     fastfetch
     fish
+    tmux
+    gdb
+    clang
 )
 
 log "Installing packages: ${PACKAGES[*]} ..."

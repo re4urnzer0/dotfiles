@@ -40,6 +40,7 @@ EOF'
 success "WSL config done."
 
 PACKAGES=(
+    git
     bat
     fd-find
     fzf
@@ -51,6 +52,7 @@ PACKAGES=(
     unzip
     man-db
     man-pages
+    fastfetch
     fish
 )
 

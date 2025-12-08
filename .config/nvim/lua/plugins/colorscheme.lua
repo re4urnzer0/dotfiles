@@ -13,7 +13,8 @@ return {
     name = "catppuccin",
     opts = {
       transparent_background = false,
-      no_italic = false,
+      term_colors = true,
+      no_italic = true,
       integrations = {
         aerial = true,
         alpha = true,
@@ -58,7 +59,7 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "catppuccin-mocha",
+      colorscheme = "catppuccin-latte",
       -- colorscheme = "tokyonight",
     },
   },

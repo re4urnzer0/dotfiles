@@ -4,7 +4,7 @@ return {
     event = "VeryLazy",
     priority = 1000,
     opts = {
-      preset = "minimal",
+      preset = "ghost",
     },
   },
   {

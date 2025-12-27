@@ -3,6 +3,7 @@
 -- Add any additional options here
 
 vim.opt.termguicolors = true
+vim.opt.clipboard = "unnamedplus"
 vim.opt.list = false
 
 if vim.g.neovide then

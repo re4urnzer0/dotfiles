@@ -12,7 +12,7 @@ return {
     lazy = true,
     name = "catppuccin",
     opts = {
-      transparent_background = false,
+      transparent_background = true,
       term_colors = true,
       no_italic = true,
       integrations = {

@@ -36,6 +36,9 @@ window#waybar {
 #mode,
 #idle_inhibitor,
 #mpd,
+#pulseaudio.microphone
+
+
 #custom-notification {
     padding: 0 10px;
     margin: 4px 2px;

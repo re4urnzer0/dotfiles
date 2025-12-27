@@ -2,11 +2,11 @@
     "layer": "top",
     "position": "top",
     "height": 36,
-    "spacing": 4,
+    "spacing": 3,
     
     "modules-left": ["niri/workspaces", "niri/window"],
     "modules-center": ["clock"],
-    "modules-right": ["pulseaudio", "network", "temperature", "cpu", "memory", "battery", "tray", "custom/notification"],
+    "modules-right": ["pulseaudio", "pulseaudio#microphone", "network", "temperature", "cpu", "memory", "battery", "tray", "custom/notification"],
 
     "niri/workspaces": {
         "format": "{icon}",
@@ -82,7 +82,7 @@
     },
 
     "custom/notification": {
-        "format": "",
+        "format": " ",
         "on-click": "makoctl dismiss",
         "on-click-right": "makoctl mode -t dnd",
         "tooltip": false
@@ -93,7 +93,16 @@
         "critical-threshold": 80, // 超过80度变红
         "format-critical": "{temperatureC}°C {icon}", // 高温时的显示格式
         "format": "{temperatureC}°C {icon}",          // 正常时的显示格式
-        "format-icons": ["", "", ""],           // 图标：冷、中、热
+        "format-icons": ["🥶", "", "🥵"],           // 图标：冷、中、热
         "interval": 2
+    },
+    "pulseaudio#microphone": {
+        "format": "{format_source}",
+        "format-source": " {volume}%",
+        "format-source-muted": " Muted",
+        "on-click": "~/.config/niri/scripts/mic-toggle.sh",
+        "on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 1%+",
+        "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 1%-",
+        "scroll-step": 5
     },
 }
